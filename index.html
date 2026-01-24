@@ -4,12 +4,11 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>FODSOFT&trade;</title>
-    
         <link rel="stylesheet" href="https://resources.fodsoft.com/fodsoft.css">
         <script src="https://resources.fodsoft.com/html.js" defer></script>
         <script src="https://resources.fodsoft.com/fodsoft.js" defer></script>
         <style>
-            body 
+            body
             {
                 background: #fff;
                 margin: 0;
@@ -20,208 +19,239 @@
                 font-family: "Montserrat", sans-serif; 
                 font-weight: bold;
             }
-            .hero-slider {
-    position: relative;
-    width: 100%;
-    max-width: 1100px;
-    margin: 40px auto 0;
-    overflow: hidden;
-    border-radius: 12px;
-}
 
-.hero-slide {
-    position: relative;
-    width: 100%;
-    height: 360px;
-    display: none;
-}
+            .slider-portada 
+            {
+                position: relative;
+                width: 100%;
+                margin: 0;
+                overflow: hidden;
+            }
 
-.hero-slide.activo {
-    display: block;
-}
+            .diapositiva 
+            {
+                position: relative;
+                width: 100%;
+                height: 360px;
+                display: none;
+            }
 
-.hero-fondo {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    user-select: none;
-}
+            .diapositiva.activa
+            {
+                display: block;
+            }
 
-.hero-imagen {
-    position: absolute;
-    left: 8%;
-    top: 50%;
-    transform: translateY(-50%);
-    max-height: 70%;
-    width: auto;
-    user-select: none;
-}
+            .fondo-diapositiva
+            {
+                position: absolute;
+                inset: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                user-select: none;
+            }
 
-.hero-contenido {
-    position: absolute;
-    right: 8%;
-    bottom: 12%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 16px;
-}
+            .imagen-software
+            {
+                position: absolute;
+                left: 8%;
+                top: 50%;
+                transform: translateY(-50%);
+                max-height: 70%;
+                width: auto;
+                user-select: none;
+            }
 
-.hero-logo {
-    max-width: 260px;
-    height: auto;
-    user-select: none;
-}
+            .contenido-diapositiva
+            {
+                position: absolute;
+                right: 8%;
+                bottom: 12%;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                gap: 16px;
+            }
 
-.hero-botones {
-    display: flex;
-    gap: 12px;
-}
+            .logo-software 
+            {
+                max-width: 260px;
+                height: auto;
+                user-select: none;
+            }
 
-.boton-hero {
-    text-decoration: none;
-    padding: 10px 22px;
-    border-radius: 999px;
-    font-weight: 600;
-    font-size: 0.95rem;
-    border: 2px solid #c00;
-    background: #c00;
-    color: #fff;
-    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease, color 0.15s ease;
-}
+            .botones-diapositiva
+            {
+                display: flex;
+                gap: 12px;
+            }
 
-.boton-hero.info {
-    background: transparent;
-    color: #c00;
-}
+            .boton-diapositiva
+            {
+                text-decoration: none;
+                padding: 10px 22px;
+                border-radius: 999px;
+                font-weight: 600;
+                font-size: 0.95rem;
+                border: 2px solid #c00;
+                background: #c00;
+                color: #fff;
+                transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease, color 0.15s ease;
+            }
 
-.boton-hero:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
-}
+            .boton-diapositiva.info
+            {
+                background: transparent;
+                color: #c00;
+            }
 
-.hero-control {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0,0,0,0.45);
-    color: #fff;
-    border: none;
-    font-size: 2rem;
-    padding: 6px 14px;
-    cursor: pointer;
-    border-radius: 8px;
-    user-select: none;
-}
+            .boton-diapositiva:hover
+            {
+                transform: translateY(-1px);
+                box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+            }
 
-.hero-control.prev { left: 12px; }
-.hero-control.next { right: 12px; }
+            .control-slider
+            {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                background: rgba(0,0,0,0.45);
+                color: #fff;
+                border: none;
+                font-size: 2rem;
+                padding: 6px 14px;
+                cursor: pointer;
+                border-radius: 8px;
+                user-select: none;
+            }
 
-@media (max-width: 800px) {
-    .hero-slide { height: 320px; }
-    .hero-imagen { left: 4%; max-height: 60%; }
-    .hero-contenido { right: 4%; bottom: 10%; }
-    .hero-logo { max-width: 200px; }
-    .hero-botones { flex-direction: column; align-items: flex-end; }
-}
+            .control-slider.anterior 
+            { 
+                left: 12px; 
+            }
+            
+            .control-slider.siguiente 
+            { 
+                right: 12px; 
+            }
 
+            @media (max-width: 800px) 
+            {
+                .diapositiva 
+                { 
+                    height: 320px; 
+                }
+                .imagen-software 
+                { 
+                    left: 4%; 
+                    max-height: 60%;
+                }
+                .contenido-diapositiva 
+                { 
+                    right: 4%; 
+                    bottom: 10%; 
+                }
+                .logo-software 
+                { 
+                    max-width: 200px;
+                }
+                .botones-diapositiva 
+                { 
+                    flex-direction: column; 
+                    align-items: flex-end;
+                }
+            }
         </style>
     </head>
 
     <body>
         <header id="header-fodsoft"></header>
-    
-        <section class="hero-slider">
-            <div class="hero-slide activo" data-download="https://fodsoft.com/vdream/download" data-info="https://fodsoft.com/vdream">
-                <img class="hero-fondo" src="https://resources.fodsoft.com/images/web/fondo_vdream.webp" alt="V.Dream background">
-                <img class="hero-imagen" src="https://resources.fodsoft.com/images/web/imagen_vdream.webp" alt="V.Dream image">
-                <div class="hero-contenido">
-                    <img class="hero-logo" src="https://resources.fodsoft.com/images/web/logo_vdream.webp" alt="V.Dream logo">
-                    <div class="hero-botones">
-                        <a class="boton-hero descargar" href="https://fodsoft.com/vdream/download">Download</a>
-                        <a class="boton-hero info" href="https://fodsoft.com/vdream">More info</a>
+        <section class="slider-portada">
+            <div class="diapositiva activa">
+                <img class="fondo-diapositiva" src="https://resources.fodsoft.com/images/web/fondo_vdream.webp" alt="V.Dream fondo">
+                <img class="imagen-software" src="https://resources.fodsoft.com/images/web/imagen_vdream.webp" alt="V.Dream imagen">
+                <div class="contenido-diapositiva">
+                    <img class="logo-software" src="https://resources.fodsoft.com/images/web/logo_vdream.webp" alt="V.Dream logo">
+                    <div class="botones-diapositiva">
+                        <a class="boton-diapositiva descargar" href="https://fodsoft.com/vdream/download">Download</a>
+                        <a class="boton-diapositiva info" href="https://fodsoft.com/vdream">More info</a>
                     </div>
                 </div>
             </div>
-    
-            <div class="hero-slide" data-download="https://fodsoft.com/nwibuzz/download" data-info="https://fodsoft.com/nwibuzz">
-                <img class="hero-fondo" src="https://resources.fodsoft.com/images/web/fondo_nwibuzz.webp" alt="Nwibuzz background">
-                <img class="hero-imagen" src="https://resources.fodsoft.com/images/web/imagen_nwibuzz.webp" alt="Nwibuzz image">
-                <div class="hero-contenido">
-                    <img class="hero-logo" src="https://resources.fodsoft.com/images/web/logo_nwibuzz.webp" alt="Nwibuzz logo">
-                    <div class="hero-botones">
-                        <a class="boton-hero descargar" href="https://fodsoft.com/nwibuzz/download">Download</a>
-                        <a class="boton-hero info" href="https://fodsoft.com/nwibuzz">More info</a>
+
+            <div class="diapositiva">
+                <img class="fondo-diapositiva" src="https://resources.fodsoft.com/images/web/fondo_nwibuzz.webp" alt="Nwibuzz fondo">
+                <img class="imagen-software" src="https://resources.fodsoft.com/images/web/imagen_nwibuzz.webp" alt="Nwibuzz imagen">
+                <div class="contenido-diapositiva">
+                    <img class="logo-software" src="https://resources.fodsoft.com/images/web/logo_nwibuzz.webp" alt="Nwibuzz logo">
+                    <div class="botones-diapositiva">
+                        <a class="boton-diapositiva descargar" href="https://fodsoft.com/nwibuzz/download">Download</a>
+                        <a class="boton-diapositiva info" href="https://fodsoft.com/nwibuzz">More info</a>
                     </div>
                 </div>
             </div>
-    
-            <div class="hero-slide" data-download="https://fodsoft.com/fvax/download" data-info="https://fodsoft.com/fvax">
-                <img class="hero-fondo" src="https://resources.fodsoft.com/images/web/fondo_fvax.webp" alt="FVAX background">
-                <img class="hero-imagen" src="https://resources.fodsoft.com/images/web/imagen_fvax.webp" alt="FVAX image">
-                <div class="hero-contenido">
-                    <img class="hero-logo" src="https://resources.fodsoft.com/images/web/logo_fvax.webp" alt="FVAX logo">
-                    <div class="hero-botones">
-                        <a class="boton-hero descargar" href="https://fodsoft.com/fvax/download">Download</a>
-                        <a class="boton-hero info" href="https://fodsoft.com/fvax">More info</a>
-                    </div>
-                </div>
-            </div>
-    
-            <button class="hero-control prev">‹</button>
-            <button class="hero-control next">›</button>
+
+            <button class="control-slider anterior">‹</button>
+            <button class="control-slider siguiente">›</button>
         </section>
         <footer id="footer-fodsoft"></footer>
     </body>
-        <script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const slides = document.querySelectorAll(".hero-slide");
-        const prev = document.querySelector(".hero-control.prev");
-        const next = document.querySelector(".hero-control.next");
-        let index = 0;
-        let intervalo = null;
+    <script>
+        document.addEventListener("DOMContentLoaded", () => 
+        {
+            const diapositivas = document.querySelectorAll(".diapositiva");
+            const btnAnterior = document.querySelector(".control-slider.anterior");
+            const btnSiguiente = document.querySelector(".control-slider.siguiente");
+            let indice = 0;
+            let intervalo = null;
     
-        function mostrarSlide(i) {
-            slides.forEach(s => s.classList.remove("activo"));
-            slides[i].classList.add("activo");
-        }
+            function mostrarDiapositiva(indice) 
+            {
+                diapositivas.forEach(d => d.classList.remove("activa"));
+                diapositivas[indice].classList.add("activa");
+            }
     
-        function siguiente() {
-            index = (index + 1) % slides.length;
-            mostrarSlide(index);
-        }
+            function siguiente() 
+            {
+                indice = (indice + 1) % diapositivas.length;
+                mostrarDiapositiva(indice);
+            }
     
-        function anterior() {
-            index = (index - 1 + slides.length) % slides.length;
-            mostrarSlide(index);
-        }
+            function anterior() 
+            {
+                indice = (indice - 1 + diapositivas.length) % diapositivas.length;
+                mostrarDiapositiva(indice);
+            }
     
-        function iniciarAuto() {
-            intervalo = setInterval(siguiente, 6000);
-        }
+            function iniciarAuto() 
+            {
+                intervalo = setInterval(siguiente, 6000);
+            }
     
-        function pararAuto() {
-            clearInterval(intervalo);
-            intervalo = null;
-        }
+            function pararAuto() 
+            {
+                clearInterval(intervalo);
+                intervalo = null;
+            }
     
-        next.addEventListener("click", () => {
-            pararAuto();
-            siguiente();
+            btnSiguiente.addEventListener("click", () => 
+            {
+                pararAuto();
+                siguiente();
+                iniciarAuto();
+            });
+    
+            btnAnterior.addEventListener("click", () => 
+            {
+                pararAuto();
+                anterior();
+                iniciarAuto();
+            });
+    
+            mostrarDiapositiva(indice);
             iniciarAuto();
         });
-    
-        prev.addEventListener("click", () => {
-            pararAuto();
-            anterior();
-            iniciarAuto();
-        });
-    
-        mostrarSlide(index);
-        iniciarAuto();
-    });
     </script>
 </html>
 <!-- FODSOFT(TM). Neo Fodere de Frutos. All rights reserved. -->
