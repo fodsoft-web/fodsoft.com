@@ -228,84 +228,63 @@
             <button class="control-slider siguiente">›</button>
         </section>
         <footer id="footer-fodsoft"></footer>
-
-        <script>
-            document.addEventListener("DOMContentLoaded", () => 
-            {
-                const diapositivas = document.querySelectorAll(".diapositiva");
-                const btnAnterior = document.querySelector(".control-slider.anterior");
-                const btnSiguiente = document.querySelector(".control-slider.siguiente");
-                let indice = 0;
-                let intervalo = null;
-        
-                function mostrarDiapositiva(indice) 
-                {
-                    diapositivas.forEach(d => d.classList.remove("activa"));
-                    diapositivas[indice].classList.add("activa");
-                }
-        
-                function siguiente() 
-                {
-                    indice = (indice + 1) % diapositivas.length;
-                    mostrarDiapositiva(indice);
-                }
-        
-                function anterior() 
-                {
-                    indice = (indice - 1 + diapositivas.length) % diapositivas.length;
-                    mostrarDiapositiva(indice);
-                }
-        
-                function iniciarAuto() 
-                {
-                    intervalo = setInterval(siguiente, 10000);
-                }
-        
-                function pararAuto() 
-                {
-                    clearInterval(intervalo);
-                    intervalo = null;
-                }
-        
-                btnSiguiente.addEventListener("click", () => 
-                {
-                    pararAuto();
-                    siguiente();
-                    iniciarAuto();
-                });
-        
-                btnAnterior.addEventListener("click", () => 
-                {
-                    pararAuto();
-                    anterior();
-                    iniciarAuto();
-                });
-        
-                mostrarDiapositiva(indice);
-                iniciarAuto();
-    
-                const logo = document.querySelector(".diapositiva.activa .logo-software");
-                    if (!logo) 
-                        return;
-                    const normal = "https://resources.fodsoft.com/images/web/logo_vdream.webp";
-                    const pestaneo = "https://resources.fodsoft.com/images/web/logo_vdream_anim.webp";
-                    function cicloAleatorio() 
-                    {
-                        const espera = Math.random() * (6000 - 2000) + 2000;
-                        setTimeout(() =>
-                        {
-                            logo.src = pestaneo;
-                            const duracion = Math.random() * (600 - 200) + 200;
-                            setTimeout(() =>
-                            {
-                                logo.src = normal;
-                                cicloAleatorio();
-                            }, duracion);
-                        }, espera);
-                    }
-                    cicloAleatorio();
-            });
-        </script>
     </body>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => 
+        {
+            const diapositivas = document.querySelectorAll(".diapositiva");
+            const btnAnterior = document.querySelector(".control-slider.anterior");
+            const btnSiguiente = document.querySelector(".control-slider.siguiente");
+            let indice = 0;
+            let intervalo = null;
+        
+            function mostrarDiapositiva(indice) 
+            {
+                diapositivas.forEach(d => d.classList.remove("activa"));
+                diapositivas[indice].classList.add("activa");
+            }
+        
+            function siguiente() 
+            {
+                indice = (indice + 1) % diapositivas.length;
+                mostrarDiapositiva(indice);
+            }
+        
+            function anterior() 
+            {
+                indice = (indice - 1 + diapositivas.length) % diapositivas.length;
+                mostrarDiapositiva(indice);
+            }
+        
+            function iniciarAuto() 
+            {
+                intervalo = setInterval(siguiente, 10000);
+            }
+        
+            function pararAuto() 
+            {
+                clearInterval(intervalo);
+                intervalo = null;
+            }
+        
+            btnSiguiente.addEventListener("click", () => 
+            {
+                pararAuto();
+                siguiente();
+                iniciarAuto();
+            });
+        
+            btnAnterior.addEventListener("click", () => 
+            {
+                pararAuto();
+                anterior();
+                iniciarAuto();
+            });
+        
+            mostrarDiapositiva(indice);
+            iniciarAuto();
+        });
+    </script>
 </html>
 <!-- FODSOFT(TM). Neo Fodere de Frutos. All rights reserved. -->
