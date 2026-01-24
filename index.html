@@ -110,7 +110,6 @@
                 font-weight: 600;
                 font-size: 0.95rem;
                 border: 2px solid rgba(255, 255, 255, 0.6);
-                background: rgba(255, 255, 255, 0.4);
                 color: #fff;
                 transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease, color 0.15s ease;
             }
@@ -126,7 +125,6 @@
                 position: absolute;
                 top: 50%;
                 transform: translateY(-50%);
-                background: rgba(255, 255, 255, 0.4);
                 color: #fff;
                 border: 2px solid rgba(255, 255, 255, 0.6);
                 font-size: 2rem;
@@ -151,6 +149,16 @@
             .control-slider.siguiente 
             { 
                 right: 12px; 
+            }
+
+            .boton-claro
+            {
+                background: rgba(255, 255, 255, 0.4);
+            }
+
+            .boton-oscuro
+            {
+                background: rgba(0, 0, 0, 0.4);
             }
 
             @keyframes fondo-animado
@@ -206,8 +214,8 @@
                 <div class="contenido-diapositiva">
                     <img class="logo-software" src="https://resources.fodsoft.com/images/web/logo_vdream.webp" draggable="false" oncontextmenu="return false">
                     <div class="botones-diapositiva">
-                        <a class="boton-diapositiva descargar" href="https://fodsoft.com/vdream/download">Download</a>
-                        <a class="boton-diapositiva info" href="https://fodsoft.com/vdream">More info</a>
+                        <a class="boton-claro boton-diapositiva descargar" href="https://fodsoft.com/vdream/download">Download</a>
+                        <a class="boton-claroboton-diapositiva info" href="https://fodsoft.com/vdream">More info</a>
                     </div>
                 </div>
             </div>
@@ -218,8 +226,8 @@
                 <div class="contenido-diapositiva">
                     <img class="logo-software" src="https://resources.fodsoft.com/images/web/logo_nwibuzz.webp" draggable="false" oncontextmenu="return false">
                     <div class="botones-diapositiva">
-                        <a class="boton-diapositiva descargar" href="https://fodsoft.com/nwibuzz/download">Download</a>
-                        <a class="boton-diapositiva info" href="https://fodsoft.com/nwibuzz">More info</a>
+                        <a class="boton-oscuro boton-diapositiva descargar" href="https://fodsoft.com/nwibuzz/download">Download</a>
+                        <a class="boton-oscuro boton-diapositiva info" href="https://fodsoft.com/nwibuzz">More info</a>
                     </div>
                 </div>
             </div>
@@ -286,6 +294,31 @@
             iniciarAuto();
         });
 
+        document.addEventListener("DOMContentLoaded", () => 
+        {
+            const controles = document.querySelectorAll(".control-slider");
+            const actualizar = () =>
+            {
+                const activa = document.querySelector(".diapositiva.activa .botones-diapositiva");
+                if (!activa)
+                    return;
+                const esClaro = activa.querySelector(".boton-claro") !== null;
+                controles.forEach(btn =>
+                {
+                    btn.classList.toggle("boton-claro", esClaro);
+                    btn.classList.toggle("boton-oscuro", !esClaro);
+                });
+            };
+            actualizar();
+            new MutationObserver(actualizar).observe
+            (
+                document.querySelector(".diapositiva.activa").parentNode,
+                {
+                    attributes: true, subtree: true, attributeFilter: ["class"] 
+                }
+            );
+        });
+        
         document.addEventListener("DOMContentLoaded", () => 
         {
             const logo = document.querySelector(".diapositiva.activa .logo-software");
