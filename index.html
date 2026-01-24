@@ -161,14 +161,24 @@
                 background: rgba(0, 0, 0, 0.4);
             }
 
-            @keyframes subir-bajar 
+            .rotar
+            {
+                animation: rotar-anim 8s ease infinite;
+            }
+
+            .subir-bajar
+            {
+                animation: subir-bajar-anim 4s ease infinite;
+            }
+
+            @keyframes subir-bajar-anim
             {
               0% { transform: translateY(-25px); }
               50% { transform: translateY(0); }
               100% { transform: translateY(-25px); }
             }
 
-            @keyframes rotar
+            @keyframes rotar-anim
             {
                 0% { transform: rotate(0deg); } 
                 100% { transform: rotate(360deg); }
