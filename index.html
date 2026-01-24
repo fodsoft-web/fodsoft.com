@@ -8,6 +8,11 @@
         <script src="https://resources.fodsoft.com/html.js" defer></script>
         <script src="https://resources.fodsoft.com/fodsoft.js" defer></script>
         <style>
+            #header-fodsoft
+            {
+                z-index: 99;
+            }
+
             body
             {
                 background: #fff;
@@ -25,6 +30,7 @@
                 position: relative;
                 width: 100%;
                 margin: 0;
+                z-index: 1;
                 overflow: hidden;
             }
 
@@ -51,12 +57,13 @@
                 user-select: none;
             }
 
-            .imagen-software
+            .imagen-software 
             {
                 position: absolute;
                 left: 8%;
-                top: 50%;
-                transform: translateY(-50%);
+                bottom: 0;
+                top: auto;
+                transform: none;
                 max-height: 70%;
                 width: auto;
                 user-select: none;
@@ -94,20 +101,21 @@
                 font-weight: 600;
                 font-size: 0.95rem;
                 border: 2px solid #c00;
-                background: #c00;
-                color: #fff;
+                background: #ececec;
+                color: #000;
                 transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease, color 0.15s ease;
             }
 
-            .boton-diapositiva.info
+            .boton-diapositiva.info 
             {
-                background: transparent;
-                color: #c00;
+                background: rgba(0, 0, 0, 0.4);
+                color: #fff;
+                border-color: rgba(255, 255, 255, 0.6);
             }
 
             .boton-diapositiva:hover
             {
-                transform: translateY(-1px);
+                transform: translateY(-4px);
                 box-shadow: 0 4px 10px rgba(0,0,0,0.25);
             }
 
@@ -226,7 +234,7 @@
     
             function iniciarAuto() 
             {
-                intervalo = setInterval(siguiente, 6000);
+                intervalo = setInterval(siguiente, 10000);
             }
     
             function pararAuto() 
