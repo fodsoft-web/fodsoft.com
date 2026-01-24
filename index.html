@@ -110,7 +110,7 @@
                 font-weight: 600;
                 font-size: 0.95rem;
                 border: 2px solid rgba(255, 255, 255, 0.6);
-                background: rgba(0, 0, 0, 0.4);
+                background: rgba(255, 255, 255, 0.4);
                 color: #fff;
                 transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease, color 0.15s ease;
             }
@@ -126,7 +126,7 @@
                 position: absolute;
                 top: 50%;
                 transform: translateY(-50%);
-                background: rgba(0,0,0,0.4);
+                background: rgba(255, 255, 255, 0.4);
                 color: #fff;
                 border: 2px solid rgba(255, 255, 255, 0.6);
                 font-size: 2rem;
@@ -293,20 +293,19 @@
                 return;
             const normal = "https://resources.fodsoft.com/images/web/logo_vdream.webp";
             const pestaneo = "https://resources.fodsoft.com/images/web/logo_vdream_pestaneo.webp";
+            function parpadeo()
+            {
+                logo.src = pestaneo;
+                setTimeout(() =>
+                {
+                    logo.src = normal;
+                }, 800);
+            }
             function pestanear()
             {
-                let cont = 0;
-                const intervalo = setInterval(() =>
-                {
-                    logo.src = pestaneo;
-                    setTimeout(() =>
-                    {
-                        logo.src = normal;
-                    }, 800);
-                    cont++;
-                    if (cont === 3) 
-                        clearInterval(intervalo);
-                }, 1000);
+                setTimeout(parpadeo, 3000);
+                setTimeout(parpadeo, 6000);
+                setTimeout(parpadeo, 9000);
             }
             setInterval(pestanear, 10000);
             pestanear();
