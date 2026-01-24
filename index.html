@@ -293,19 +293,26 @@
                 return;
             const normal = "https://resources.fodsoft.com/images/web/logo_vdream.webp";
             const pestaneo = "https://resources.fodsoft.com/images/web/logo_vdream_pestaneo.webp";
-            function cicloAleatorio()
+            function parpadear(siguiente)
             {
-                const espera = Math.random() * (6000 - 2000) + 2000;
+                const duracion = Math.random() * (120 - 60) + 60;
+                logo.src = pestaneo;
                 setTimeout(() => 
                 {
-                    logo.src = pestaneo;
-                    const duracion = Math.random() * (600 - 200) + 200;
-                    setTimeout(() =>
-                    {
-                        logo.src = normal;
-                        cicloAleatorio();
-                    }, duracion);
-                }, espera);
+                    logo.src = normal;
+                    if (Math.random() < 0.20)
+                        setTimeout(() => parpadear(siguiente), 150);
+                    else
+                        siguiente();
+                }, duracion);
+            }
+            function cicloAleatorio()
+            {
+                const espera = Math.random() * (8000 - 500) + 500; 
+                setTimeout(() =>
+                { 
+                    parpadear(cicloAleatorio);
+                }, espera); 
             }
             cicloAleatorio();
         });
