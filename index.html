@@ -285,6 +285,30 @@
             mostrarDiapositiva(indice);
             iniciarAuto();
         });
+
+        document.addEventListener("DOMContentLoaded", () => 
+        {
+            const logo = document.querySelector(".diapositiva.activa .logo-software");
+            if (!logo) 
+                return;
+            const normal = "https://resources.fodsoft.com/images/web/logo_vdream.webp";
+            const pestaneo = "https://resources.fodsoft.com/images/web/logo_vdream_pestaneo.webp";
+            function cicloAleatorio()
+            {
+                const espera = Math.random() * (6000 - 2000) + 2000;
+                setTimeout(() => 
+                {
+                    logo.src = pestaneo;
+                    const duracion = Math.random() * (600 - 200) + 200;
+                    setTimeout(() =>
+                    {
+                        logo.src = normal;
+                        cicloAleatorio();
+                    }, duracion);
+                }, espera);
+            }
+            cicloAleatorio();
+        });
     </script>
 </html>
 <!-- FODSOFT(TM). Neo Fodere de Frutos. All rights reserved. -->
