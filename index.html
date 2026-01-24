@@ -161,6 +161,19 @@
                 background: rgba(0, 0, 0, 0.4);
             }
 
+            @keyframes subir-bajar 
+            {
+              0% { transform: translateY(-25px); }
+              50% { transform: translateY(0); }
+              100% { transform: translateY(-25px); }
+            }
+
+            @keyframes rotar
+            {
+                0% { transform: rotate(0deg); } 
+                100% { transform: rotate(360deg); }
+            }
+            
             @keyframes fondo-animado
             {
                 0%   { background-position: 0% 50%; }
@@ -222,7 +235,7 @@
 
             <div class="diapositiva">
                 <img class="fondo-diapositiva" src="https://resources.fodsoft.com/images/web/fondo_nwibuzz.webp" draggable="false" oncontextmenu="return false">
-                <img class="imagen-software" src="https://resources.fodsoft.com/images/web/imagen_nwibuzz.webp" draggable="false" oncontextmenu="return false">
+                <img class="imagen-software subir-bajar" src="https://resources.fodsoft.com/images/web/imagen_nwibuzz.webp" draggable="false" oncontextmenu="return false">
                 <div class="contenido-diapositiva">
                     <img class="logo-software" src="https://resources.fodsoft.com/images/web/logo_nwibuzz.webp" draggable="false" oncontextmenu="return false">
                     <div class="botones-diapositiva">
@@ -234,7 +247,7 @@
 
             <div class="diapositiva">
                 <img class="fondo-diapositiva" src="https://resources.fodsoft.com/images/web/fondo_denfo.webp" draggable="false" oncontextmenu="return false">
-                <img class="imagen-software" src="https://resources.fodsoft.com/images/web/imagen_denfo.webp" draggable="false" oncontextmenu="return false">
+                <img class="imagen-software rotar" src="https://resources.fodsoft.com/images/web/imagen_denfo.webp" draggable="false" oncontextmenu="return false">
                 <div class="contenido-diapositiva">
                     <img class="logo-software" src="https://resources.fodsoft.com/images/web/logo_denfo_alt.webp" draggable="false" oncontextmenu="return false">
                     <div class="botones-diapositiva">
