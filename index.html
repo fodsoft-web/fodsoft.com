@@ -170,8 +170,20 @@
             {
                 animation: subir-bajar-anim 2s ease infinite;
             }
+            
+            .bajar-subir
+            {
+                animation: bajar-subir-anim 2s ease infinite;
+            }
 
-            @keyframes subir-bajar-anim
+            @keyframes bajar-subir-anim
+            {
+              0% { transform: translateY(0); }
+              50% { transform: translateY(-25px); }
+              100% { transform: translateY(0); }
+            }
+
+            @keyframes bajar-subir-anim
             {
               0% { transform: translateY(0); }
               50% { transform: translateY(25px); }
@@ -245,7 +257,8 @@
 
             <div class="diapositiva">
                 <img class="fondo-diapositiva" src="https://resources.fodsoft.com/images/web/fondo_nwibuzz.webp" draggable="false" oncontextmenu="return false">
-                <img class="imagen-software subir-bajar" src="https://resources.fodsoft.com/images/web/imagen_nwibuzz.webp" draggable="false" oncontextmenu="return false">
+                <img class="imagen-software bajar-subir" src="https://resources.fodsoft.com/images/web/imagen_nwibuzz_a.webp" draggable="false" oncontextmenu="return false">
+                <img class="imagen-software subir-bajar" src="https://resources.fodsoft.com/images/web/imagen_nwibuzz_b.webp" draggable="false" oncontextmenu="return false">
                 <div class="contenido-diapositiva">
                     <img class="logo-software" src="https://resources.fodsoft.com/images/web/logo_nwibuzz.webp" draggable="false" oncontextmenu="return false">
                     <div class="botones-diapositiva">
