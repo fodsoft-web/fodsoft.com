@@ -208,6 +208,7 @@
                 width: 180px;
                 height: auto;
                 user-select: none;
+                animation: respirar 1.2s ease-in-out infinite; 
             	filter:
             	    brightness(0) invert(92%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(110%)
             		drop-shadow(0 0 6px rgba(255, 170, 170, 1))
@@ -219,20 +220,19 @@
             .texto-fodsoft
             {
                 flex: 1;
+                animation: oleaje-gris 3s ease-in-out infinite;
             }
 
             .titulo-fodsoft
             {
                 font-size: 2rem;
                 font-weight: 700;
-                color: #000;
                 margin-bottom: 12px;
             }
 
             .descripcion-fodsoft 
             {
                 font-size: 1.1rem;
-                color: #4d4d4d;
                 opacity: 0.85;
             }
 
@@ -270,6 +270,13 @@
                 animation: bajar-subir-anim 3s ease infinite;
             }
 
+            @keyframes oleaje-gris
+            {
+                0%   { color: #000; }
+                50%  { color: #4d4d4d; }
+                100% { color: #000; }
+            }
+            
             @keyframes subir-bajar-anim
             {
               0% { transform: translateY(25px); }
