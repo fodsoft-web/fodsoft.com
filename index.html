@@ -227,11 +227,7 @@
                 font-weight: 700;
                 color: #000;
                 margin-bottom: 12px;
-                text-shadow:
-                    0 0 6px rgba(255, 255, 255, 1),
-                    0 0 12px rgba(255, 255, 255, 0.9),
-                    0 0 20px rgba(255, 255, 255, 0.8),
-                    0 0 30px rgba(255, 255, 255, 0.7);
+                animation: respiracion-color 3s ease-in-out infinite;
             }
 
             .descripcion-fodsoft 
@@ -239,10 +235,7 @@
                 font-size: 1.1rem;
                 color: #000;
                 opacity: 0.85;
-                text-shadow:
-                    0 0 4px rgba(255, 255, 255, 1), 
-                    0 0 10px rgba(255, 255, 255, 0.9), 
-                    0 0 18px rgba(255, 255, 255, 0.7);
+                animation: respiracion-color 3s ease-in-out infinite;
             }
 
             .boton-claro
@@ -268,6 +261,34 @@
             .bajar-subir
             {
                 animation: bajar-subir-anim 3s ease infinite;
+            }
+
+            @keyframes respiracion-color
+            {
+                0%
+                {
+                    text-shadow:
+                        0 0 6px rgba(255, 255, 255, 1),
+                        0 0 12px rgba(255, 255, 255, 0.9),
+                        0 0 20px rgba(255, 255, 255, 0.8),
+                        0 0 30px rgba(255, 255, 255, 0.7);
+                }
+                50%
+                {
+                    text-shadow:
+                        0 0 6px rgba(255, 60, 60, 1),
+                        0 0 12px rgba(255, 60, 60, 0.9),
+                        0 0 20px rgba(255, 60, 60, 0.8),
+                        0 0 30px rgba(255, 60, 60, 0.7);
+                }
+                100% 
+                {
+                    text-shadow:
+                        0 0 6px rgba(255, 255, 255, 1),
+                        0 0 12px rgba(255, 255, 255, 0.9),
+                        0 0 20px rgba(255, 255, 255, 0.8),
+                        0 0 30px rgba(255, 255, 255, 0.7);
+                }
             }
 
             @keyframes subir-bajar-anim
