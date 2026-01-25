@@ -202,7 +202,7 @@
                 50%  { background-position: 100% 50%; }
                 100% { background-position: 0% 50%; }
             }
-
+            
             @media (max-width: 800px) 
             {
                 .diapositiva 
@@ -230,11 +230,28 @@
                 }
                 .boton-diapositiva
                 {
-                    padding: 10px 22px;
+                    min-width: 80px;
                 }
                 .control-slider
                 {
                     top: 17.5%;
+                }
+            }
+
+            @media (max-width: 400px)
+            {
+                .imagen-software 
+                { 
+                    left: 2%; 
+                    max-height: 45%;
+                }
+                .logo-software 
+                { 
+                    max-width: 150px;
+                }
+                .boton-diapositiva
+                {
+                    min-width: 60px;
                 }
             }
         </style>
