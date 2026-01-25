@@ -151,6 +151,21 @@
                 right: 12px; 
             }
 
+            .control-slider.pausa 
+            {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .control-slider.pausa img
+            {
+                width: 22px;
+                height: 22px;
+                pointer-events: none;
+                user-select: none;
+            }
+
             .boton-claro
             {
                 background: rgba(255, 255, 255, 0.4);
@@ -310,6 +325,9 @@
             </div>
 
             <button class="control-slider anterior">‹</button>
+            <button class="control-slider pausa">
+                <img src="https://resources.fodsoft.com/images/web/icono_pausa.webp" class="icono-pausa-play"> 
+            </button>
             <button class="control-slider siguiente">›</button>
         </section>
         <footer id="footer-fodsoft"></footer>
@@ -321,8 +339,10 @@
             const diapositivas = document.querySelectorAll(".diapositiva");
             const btnAnterior = document.querySelector(".control-slider.anterior");
             const btnSiguiente = document.querySelector(".control-slider.siguiente");
+            const btnPausa = document.querySelector(".control-slider.pausa .icono-pausa-play");
             let indice = 0;
             let intervalo = null;
+            let auto = true;
         
             function mostrarDiapositiva(indice) 
             {
@@ -355,18 +375,38 @@
         
             btnSiguiente.addEventListener("click", () => 
             {
-                pararAuto();
+                if (auto)
+                {
+                    pararAuto();
+                    iniciarAuto();
+                }
                 siguiente();
-                iniciarAuto();
             });
         
             btnAnterior.addEventListener("click", () => 
             {
-                pararAuto();
+                if (auto)
+                {
+                    pararAuto();
+                    iniciarAuto();
+                }
                 anterior();
-                iniciarAuto();
             });
-        
+
+            document.querySelector(".control-slider.pausa").addEventListener("click", () =>
+            {
+                auto = !auto;
+                if (auto)
+                {
+                    btnPausa.src = "https://resources.fodsoft.com/images/web/icono_pausa.webp";
+                    iniciarAuto();
+                }
+                else
+                {
+                    btnPausa.src = "https://resources.fodsoft.com/images/web/icono_play.webp";
+                    pararAuto();
+                }
+            });
             mostrarDiapositiva(indice);
             iniciarAuto();
         });
@@ -395,6 +435,7 @@
                 }
             );
         });
+        
         document.addEventListener("DOMContentLoaded", () => 
         {
             const logo = document.querySelector(".diapositiva.activa .logo-software");
