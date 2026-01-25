@@ -186,6 +186,44 @@
                 user-select: none;
             }
 
+            .seccion-fodsoft
+            {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 40px;
+                padding: 60px 20px;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+
+            .logo-fodsoft
+            {
+                width: 180px;
+                height: auto;
+                user-select: none;
+            }
+
+            .texto-fodsoft
+            {
+                flex: 1;
+            }
+
+            .titulo-fodsoft
+            {
+                font-size: 2rem;
+                font-weight: 700;
+                color: #000;
+                margin-bottom: 12px;
+            }
+
+            .descripcion-fodsoft 
+            {
+                font-size: 1.1rem;
+                color: #000;
+                opacity: 0.85;
+            }
+
             .boton-claro
             {
                 background: rgba(255, 255, 255, 0.4);
@@ -270,6 +308,19 @@
                 .control-slider
                 {
                     top: 17.5%;
+                }
+                .seccion-fodsoft
+                {
+                    flex-direction: column;
+                    text-align: center;
+                }
+                .logo-fodsoft
+                {
+                    width: 150px;
+                }
+                .texto-fodsoft
+                {
+                    width: 100%;
                 }
             }
 
@@ -356,6 +407,14 @@
                 <img src="https://resources.fodsoft.com/images/web/icono_pausa.webp" class="icono-pausa-play"> 
             </button>
             <button class="control-slider siguiente">›</button>
+        </section>
+
+        <section class="seccion-fodsoft">
+            <img class="logo-fodsoft" src="https://resources.fodsoft.com/images/web/logo_fodsoft_b.webp" draggable="false" oncontextmenu="return false">
+            <div class="texto-fodsoft">
+                <h2 class="titulo-fodsoft">What is FODSOFT™?</h2>
+                <p class="descripcion-fodsoft">...</p>
+            </div>
         </section>
         <footer id="footer-fodsoft"></footer>
     </body>
