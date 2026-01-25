@@ -227,7 +227,6 @@
                 font-weight: 700;
                 color: #000;
                 margin-bottom: 12px;
-                animation: respiracion-color 6s ease-in-out infinite;
             }
 
             .descripcion-fodsoft 
@@ -235,7 +234,15 @@
                 font-size: 1.1rem;
                 color: #000;
                 opacity: 0.85;
-                animation: respiracion-color 6s ease-in-out infinite;
+            }
+
+            .luz-texto
+            {
+                text-shadow:
+                    0 0 6px rgba(255, 255, 255, 1),
+                    0 0 12px rgba(255, 255, 255, 0.9),
+                    0 0 20px rgba(255, 255, 255, 0.8),
+                    0 0 30px rgba(255, 255, 255, 0.7);
             }
 
             .boton-claro
@@ -261,34 +268,6 @@
             .bajar-subir
             {
                 animation: bajar-subir-anim 3s ease infinite;
-            }
-
-            @keyframes respiracion-color
-            {
-                0%
-                {
-                    text-shadow:
-                        0 0 6px rgba(255, 170, 170, 1),
-            		    0 0 12px rgba(255, 170, 170, 0.9),
-            		    0 0 20px rgba(255, 170, 170, 0.8),
-            		    0 0 30px rgba(255, 170, 170, 0.7);
-                }
-                50%
-                {
-                    text-shadow:
-                        0 0 6px rgba(255, 255, 255, 1),
-                        0 0 12px rgba(255, 255, 255, 0.9),
-                        0 0 20px rgba(255, 255, 255, 0.8),
-                        0 0 30px rgba(255, 255, 255, 0.7);
-                }
-                100% 
-                {
-                    text-shadow:
-                        0 0 6px rgba(255, 170, 170, 1),
-            		    0 0 12px rgba(255, 170, 170, 0.9),
-            		    0 0 20px rgba(255, 170, 170, 0.8),
-            		    0 0 30px rgba(255, 170, 170, 0.7);
-                }
             }
 
             @keyframes subir-bajar-anim
@@ -453,7 +432,7 @@
 
         <section class="seccion-fodsoft">
             <img class="logo-fodsoft" src="https://resources.fodsoft.com/images/web/logo_fodsoft_b.webp" draggable="false" oncontextmenu="return false">
-            <div class="texto-fodsoft">
+            <div class="texto-fodsoft luz-texto">
                 <h2 class="titulo-fodsoft">What is FODSOFT™?</h2>
                 <p class="descripcion-fodsoft">FODSOFT™ is a studio founded by Néo Foderé de Frutos in Barcelona, Spain, in February 2025. It is primarily focused on software development, while also publishing the video games developed by NSTUDIOS GAMES™ across digital platforms.</p>
             </div>
