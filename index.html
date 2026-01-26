@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+		<script>
+			(function() 
+			{
+			    if (location.hostname.endsWith("archive.org"))
+			        return;
+			    if (!location.hostname.endsWith("fodsoft.com") || window.top !== window.self)
+			    {
+			        document.open();
+			        document.write("");
+			        document.close();
+			    }
+			})();
+		</script>
+
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>FODSOFT&trade;</title>
