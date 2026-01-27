@@ -155,14 +155,29 @@
 				font-weight: 400;
                 font-size: 3.2rem;
                 line-height: 1.2;
-                color: #ececec;
+                color: #fff;
                 text-shadow: 0 0 15px rgba(100,150,255,0.8);
                 animation: luz-texto 2.5s infinite ease-in-out;
             }
 
-			.primera-linea
+			.primera-linea 
 			{
-				color: white;
+				background: linear-gradient
+				(
+					90deg,
+					#bff0ff,
+					#8fd8ff,
+					#5fbfff,
+					#3f9fff,
+					#5fbfff,
+					#8fd8ff,
+					#bff0ff
+				);
+				background-size: 300% 100%;
+				-webkit-background-clip: text;
+				background-clip: text;
+				color: transparent;
+				animation: arcoiris-azul 4s linear infinite;
 			}
 
             .imagen-vsmile img 
@@ -186,6 +201,13 @@
 				filter: brightness(0) invert(1);
 			}
 
+			@keyframes arcoiris-azul 
+			{
+				0% { background-position: 0% 50%; }
+				50% { background-position: 100% 50%; }
+				100% { background-position: 0% 50%; }
+			}
+			
 			@keyframes respirar 
 			{ 
 				0% { transform: scale(1); } 
