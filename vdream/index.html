@@ -1,113 +1,198 @@
-<!-- TEMPORARY PAGE — IT WILL GET BETTER, THIS ONE AND FODSOFT.COM IN GENERAL, I PROMISE :) -->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="icon" href="/vdream/favicon.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>V.Dream - FODSOFT™</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>V.Dream - FODSOFT&trade;</title>
+        <meta name="author" content="Néo Foderé de Frutos">
+        <meta name="description" content="V.Dream is a V.Smile emulator developed by Néo Foderé de Frutos under the FODSOFT™ brand and written in C, C#, and XAML.">
+		<meta name="keywords" content="V.Smile emulator, Vsmile emulator, VSmile emu, VTech Emulator, FODSOFT, Neo Fodere">
+        <meta property="og:title" content="V.Dream - FODSOFT™">
+        <meta property="og:description" content="V.Smile emulator developed by Néo Foderé de Frutos under the FODSOFT™ brand.">
+        <meta property="og:image" content="https://resources.fodsoft.com/images/ext/logo_vdream_a.png">
+        <meta property="og:url" content="https://fodsoft.com/vdream">
+        <meta property="og:type" content="website">
+        <link rel="icon" href="https://fodsoft.com/vdream/favicon.ico" type="image/x-icon">
+		<script src="https://resources.fodsoft.com/fodsoft.js" defer></script>
 
-    <style>
-        body
+        <script type="application/ld+json">
         {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f5f5f5;
-            color: #222;
+            "@context": "https://schema.org",
+            "@type": "Product",
+            "name": "V.Dream",
+            "description": "V.Smile emulator developed by Néo Foderé de Frutos under the FODSOFT™ brand and written in C, C#, and XAML.",
+            "logo": "https://resources.fodsoft.com/images/ext/logo_vdream_a.png",
+            "url": "https://fodsoft.com/vdream",
+            "brand": 
+            {
+                "@type": "Brand",
+                "name": "FODSOFT",
+                "logo": "https://resources.fodsoft.com/images/ext/logo_fodsoft_a1.png"
+            },
+            "creator": 
+            {
+                "@type": "Person",
+                "name": "Néo Foderé de Frutos"
+            },
+            "image": 
+            [
+                "https://raw.githubusercontent.com/neofodere/vdream/refs/heads/main/images/vdream_screenshot_01.png",
+                "https://raw.githubusercontent.com/neofodere/vdream/refs/heads/main/images/vdream_screenshot_02.png",
+                "https://raw.githubusercontent.com/neofodere/vdream/refs/heads/main/images/vdream_screenshot_03.png",
+                "https://raw.githubusercontent.com/neofodere/vdream/refs/heads/main/images/vdream_screenshot_04.png"
+            ],
+            "sameAs": 
+            [
+                "https://github.com/neofodere/vdream",
+                "https://fodsoft.itch.io/vdream",
+                "https://sourceforge.net/projects/v-dream/",
+                "https://v-dream.en.uptodown.com/windows",
+                "https://www.softpedia.com/get/System/Virtualization-Emulation/V-Dream.shtml",
+                "https://gamejolt.com/games/vdream/1038203"
+            ],
+            "softwareVersion": "1.3.0",
+            "operatingSystem": "Windows",
+            "applicationCategory": "Emulator",
+            "license": "Freeware",
+            "offers": 
+            {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "EUR",
+                "availability": "https://schema.org/InStock",
+                "url": "https://fodsoft.com/vdream/download"
+            }
         }
+        </script>
 
-        main {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 20px;
-            text-align: center;
-        }
+        <style>
+            @font-face 
+            {
+            	font-family: "Montserrat";
+            	src: url("https://resources.fodsoft.com/fonts/montserrat.ttf") format("truetype");
+            	font-weight: bold;
+            	font-style: normal;
+            } /* (OFL) Montserrat, Designed by Julieta Ulanovsky, Sol Matas, Juan Pablo del Peral, Jacques Le Bailly */
 
-        .logo {
-            width: 350px;
-            height: auto;
-            margin-bottom: 20px;
-        }
+            body
+            {
+                margin: 0;
+                padding: 0;
+                background: url("https://resources.fodsoft.com/images/web/fondo_vdream.avif") no-repeat center center fixed;
+                background-size: cover;
+                font-family: Montserrat, sans-serif;
+                color: white;
+            }
 
-        .vdream-description {
-            max-width: 800px;
-            margin: 20px auto;
-            font-size: 1rem;
-            line-height: 1.6;
-            text-align: center;
-        }
+            .vdream-header
+            {
+                position: fixed;
+                top: 0;
+                width: 100%;
+                height: 70px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0 30px;
+                background: linear-gradient(to right, rgba(255,255,255,0.4), rgba(0,80,255,0.4));
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+                border-bottom: 1px solid rgba(255,255,255,0.2);
+                z-index: 1000;
+            }
 
-        .download-btn {
-            display: inline-block;
-            margin: 25px auto;
-            padding: 14px 28px;
-            background-color: #0078ff;
-            color: white;
-            font-size: 1.15rem;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background-color 0.2s ease;
-        }
+            .vdream-logo 
+            {
+                height: 50px;
+            }
 
-        .download-btn:hover {
-            background-color: #005fcc;
-        }
+            .vdream-nav a 
+            {
+                margin-left: 25px;
+                text-decoration: none;
+                color: white;
+                font-weight: 600;
+                display: inline-flex;
+                align-items: center;
+                transition: opacity 0.2s;
+            }
 
-        h2 {
-            margin-top: 50px;
-            font-size: 1.6rem;
-        }
+            .vdream-nav a:hover 
+            {
+                opacity: 0.7;
+            }
 
-        .grid {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
+            .icono-header 
+            {
+                width: 18px;
+                height: 18px;
+                margin-right: 8px;
+            }
 
-        .cover-box {
-            text-align: center;
-        }
+            .vdream-present 
+            {
+                margin-top: 120px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 60px;
+            }
 
-        .cover {
-            width: 220px;
-            border-radius: 8px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-        }
+            .texto-vdream-present h1 
+            {
+                font-size: 3.2rem;
+                line-height: 1.2;
+                color: white;
+                text-shadow: 0 0 15px rgba(100,150,255,0.8);
+                animation: luz-texto 2.5s infinite ease-in-out;
+            }
 
-        .cover-text {
-            margin-top: 10px;
-            font-weight: bold;
-        }
-    </style>
-</head>
+            .consola-vsmile img 
+            {
+                width: 420px;
+                border-radius: 10px;
+                box-shadow: 
+                    0 0 25px rgba(120,170,255,0.9), 
+                    0 0 45px rgba(120,170,255,0.6), 
+                    0 0 70px rgba(120,170,255,0.4);
+            }
+    
+            @keyframes luz-texto 
+            {
+                0% { text-shadow: 0 0 10px rgba(100,150,255,0.6); }
+                50% { text-shadow: 0 0 25px rgba(150,200,255,1); }
+                100% { text-shadow: 0 0 10px rgba(100,150,255,0.6); }
+            }
+        </style>
+    </head>
 
-<body>
-    <main>
+    <body>
+        <header class="vdream-header">
+            <div class="vdream-header-izquierda">
+                <img src="https://resources.fodsoft.com/images/web/logo_vdream.avif" class="vdream-logo">
+            </div>
 
-        <img src="https://resources.fodsoft.com/images/web/logo_vdream.avif" class="logo">
+            <nav class="vdream-nav">
+                <a href="https://fodsoft.com/vdream/"><img src="https://resources.fodsoft.com/images/web/icono_inicio.avif" class="icono-header"> Home</a>
+                <a href="https://fodsoft.com/vdream/download"><img src="https://resources.fodsoft.com/images/web/icono_descarga.avif" class="icono-header"> Download</a>
+                <a href="https://github.com/neofodere/vdream"><img src="https://resources.fodsoft.com/images/web/icono_github.avif" class="icono-header"> Github</a>
+                <a href="https://fodsoft.com"><img src="https://resources.fodsoft.com/images/web/icono_fodsoft.avif" class="icono-header"> FODSOFT™</a>
+            </nav>
+        </header>
 
-        <div class="vdream-description">
-            <p>
-                <strong>V.Dream</strong> is a V.Smile emulator developed by Néo Foderé de Frutos under the 
-                FODSOFT™ brand and written in C, C#, and XAML. The V.Dream core is based on V.Frown, an emulator 
-                originally developed by Ian (Schnert0) and other contributors.
-            </p>
-            <p>
-                With V.Dream, you can play and relive the games from your childhood or discover them for the first 
-                time, develop your own software with instructions for the emulated hardware, among other features. 
-                It should be noted that neither FODSOFT™ nor V.Dream provide ROMs or any other means that facilitate 
-                piracy; the only thing FODSOFT™ offers is software that simulates the hardware of that era so the 
-                games can run on modern devices.
-            </p>
+        <section class="vdream-present">
+            <div class="texto-vdream-present">
+                <h1>
+                    V.Smile<br>
+                    The definitive<br>
+                    V.Smile family emulator
+                </h1>
+            </div>
 
-            <a class="download-btn" href="https://resources.fodsoft.com/downloads/vdream-win-installer" target="_blank">
-                Download
-            </a>
-        </div>
-
-    </main>
-</body>
+            <div class="consola-vsmile">
+                <img src="https://static.wikia.nocookie.net/vtech9471/images/f/fb/Vsmile-console-gen1.jpg" alt="V.Smile Console">
+            </div>
+        </section>
+    </body>
 </html>
-<!-- FODSOFT(TM), NSTUDIOS GAMES(TM). Neo Fodere de Frutos. All rights reserved -->
+<!-- FODSOFT(TM). Neo Fodere de Frutos. All rights reserved. -->
