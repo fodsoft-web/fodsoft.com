@@ -156,7 +156,17 @@
                     0 0 45px rgba(120,170,255,0.6), 
                     0 0 70px rgba(120,170,255,0.4);
             }
-    
+
+			.invertir-color
+			{
+				filter: invert(1);
+			}
+
+			.pintar-blanco
+			{
+				filter: brightness(0) invert(1);
+			}
+			
             @keyframes luz-texto 
             {
                 0% { text-shadow: 0 0 10px rgba(100,150,255,0.6); }
@@ -173,19 +183,19 @@
             </div>
 
             <nav class="vdream-nav">
-                <a href="https://fodsoft.com/vdream/"><img src="https://resources.fodsoft.com/images/web/icono_inicio.avif" class="icono-header"> Home</a>
-                <a href="https://fodsoft.com/vdream/download"><img src="https://resources.fodsoft.com/images/web/icono_descarga.avif" class="icono-header"> Download</a>
+                <a href="https://fodsoft.com/vdream/"><img src="https://resources.fodsoft.com/images/web/icono_inicio.avif" class="icono-header invertir-color"> Home</a>
+                <a href="https://fodsoft.com/vdream/download"><img src="https://resources.fodsoft.com/images/web/icono_descargar.avif" class="icono-header invertir-color"> Download</a>
                 <a href="https://github.com/neofodere/vdream"><img src="https://resources.fodsoft.com/images/web/icono_github.avif" class="icono-header"> Github</a>
-                <a href="https://fodsoft.com"><img src="https://resources.fodsoft.com/images/web/icono_fodsoft.avif" class="icono-header"> FODSOFT™</a>
+                <a href="https://fodsoft.com"><img src="https://resources.fodsoft.com/images/web/icono_fodsoft.avif" class="icono-header pintar-blanco"> FODSOFT™</a>
             </nav>
         </header>
 
         <section class="vdream-present">
             <div class="texto-vdream-present">
                 <h1>
-                    V.Smile<br>
+                    V.Dream,<br>
                     The definitive<br>
-                    V.Smile family emulator
+                    V.Smile family emulator.
                 </h1>
             </div>
 
