@@ -160,6 +160,36 @@
                 animation: luz-texto 2.5s infinite ease-in-out;
             }
 
+			.boton-descarga 
+			{
+				display: inline-flex;
+				align-items: center;
+				gap: 10px;
+				margin-top: 25px;
+				padding: 14px 28px;
+				font-size: 1.2rem;
+				font-weight: 600;
+				color: #fff;
+				text-decoration: none;
+				border-radius: 10px;
+				background: linear-gradient(90deg, #3f9fff, #5fbfff);
+				box-shadow: 0 0 15px rgba(100,150,255,0.7);
+				transition: transform 0.2s ease, box-shadow 0.2s ease;
+			}
+
+			.boton-descarga:hover 
+			{
+				transform: scale(1.07);
+				box-shadow: 0 0 25px rgba(150,200,255,1);
+			}
+
+			.icono-boton 
+			{
+				height: 22px;
+				width: auto;
+				user-select: none;
+			}
+
             .imagen-vsmile img 
             {
                 width: 420px;
