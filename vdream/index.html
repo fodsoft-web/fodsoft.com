@@ -228,12 +228,9 @@
     </body>
 
 	<script>
-		if (window.location.pathname.endsWith("/vdream/index.html"))
-			window.location.replace("/vdream");
-	
 		document.addEventListener("DOMContentLoaded", () => 
 	    {
-	        const logo = document.querySelector(".diapositiva.activa .logo-software");
+	        const logo = document.querySelector(".vdream-logo");
 	        if (!logo) 
 	            return;
 	        const normal = "https://resources.fodsoft.com/images/web/logo_vdream.avif";
