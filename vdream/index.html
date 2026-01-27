@@ -160,24 +160,24 @@
                 animation: luz-texto 2.5s infinite ease-in-out;
             }
 
-			.primera-linea 
+			.primera-linea
 			{
-				background: linear-gradient
+				background: repeating-linear-gradient
 				(
 					90deg,
-					#bff0ff,
-					#8fd8ff,
-					#5fbfff,
-					#3f9fff,
-					#5fbfff,
-					#8fd8ff,
-					#bff0ff
+					#bff0ff 0%,
+					#8fd8ff 10%,
+					#5fbfff 20%,
+					#3f9fff 30%,
+					#5fbfff 40%,
+					#8fd8ff 50%,
+					#bff0ff 60%
 				);
-				background-size: 300% 100%;
+				background-size: 400% 100%;
 				-webkit-background-clip: text;
 				background-clip: text;
 				color: transparent;
-				animation: arcoiris-azul 4s linear infinite;
+				animation: arcoiris-azul 6s linear infinite;
 			}
 
             .imagen-vsmile img 
@@ -203,9 +203,8 @@
 
 			@keyframes arcoiris-azul 
 			{
-				0% { background-position: 0% 50%; }
-				50% { background-position: 100% 50%; }
-				100% { background-position: 0% 50%; }
+				0%   { background-position: 0% 50%; }
+				100% { background-position: 400% 50%; }
 			}
 			
 			@keyframes respirar 
