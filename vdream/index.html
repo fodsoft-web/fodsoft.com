@@ -152,7 +152,7 @@
 				display: none;
 				position: fixed;
 				top: 70px;
-				right: 0;
+				right: 15px;
 				width: 220px;
 				border-radius: 10px;
 				background: linear-gradient
@@ -279,7 +279,7 @@
 				}
 			}
 
-			@media (max-width: 950px) 
+			@media (max-width: 1050px) 
 			{
 				.vdream-nav 
 				{
@@ -367,12 +367,23 @@
 	</body>
 
 	<script>
-		const boton = document.getElementById("vdream-menu-boton") 
-		const menu = document.getElementById("vdream-menu") 
+		const boton = document.getElementById("vdream-menu-boton")
+		const menu = document.getElementById("vdream-menu")
 		boton.onclick = () => 
-		{ 
-			menu.style.display = menu.style.display === "flex" ? "none" : "flex" 
+		{
+			menu.style.display = menu.style.display === "flex" ? "none" : "flex"
 		}
+		window.addEventListener("resize", () => 
+		{
+			if (window.innerWidth > 1050)
+				menu.style.display = "none"
+		})
+
+		document.addEventListener("click", e => 
+		{
+			if (!menu.contains(e.target) && e.target !== boton)
+				menu.style.display = "none"
+		})
 
 		document.addEventListener("DOMContentLoaded", () => 
 	    {
