@@ -81,7 +81,7 @@
 				background: url("https://resources.fodsoft.com/images/web/fondo_vdream.avif") no-repeat center center fixed;
 				background-size: cover;
 				font-family: Montserrat, sans-serif;
-				color: white;
+				color: #fff;
 			}
 
 			.vdream-header 
@@ -117,7 +117,7 @@
 			.vdream-nav a 
 			{
 				text-decoration: none;
-				color: white;
+				color: #fff;
 				font-weight: 600;
 				display: inline-flex;
 				align-items: center;
@@ -154,7 +154,14 @@
 				top: 70px;
 				right: 0;
 				width: 220px;
-				background: rgba(0,0,0,0.55);
+				border-radius: 10px;
+				background: linear-gradient
+				(
+					90deg,
+					rgba(63,159,255,0.55),
+					rgba(95,191,255,0.55)
+				);
+				box-shadow: 0 0 15px rgba(100,150,255,0.7);
 				backdrop-filter: blur(12px);
 				padding: 20px;
 				flex-direction: column;
@@ -165,14 +172,14 @@
 			.vdream-menu-desplegable a 
 			{
 				text-decoration: none;
-				color: white;
+				color: #fff;
 				font-weight: 600;
 				display: flex;
 				align-items: center;
 				gap: 10px;
 			}
 
-			.vdream-present 
+			.vdream-titulo 
 			{
 				margin-top: 120px;
 				display: flex;
@@ -182,7 +189,7 @@
 				gap: 120px;
 			}
 
-			.texto-vdream-present h1 
+			.texto-vdream-titulo h1 
 			{
 				font-weight: 400;
 				font-size: 3.2rem;
@@ -204,8 +211,14 @@
 				color: #fff;
 				text-decoration: none;
 				border-radius: 10px;
-				background: linear-gradient(90deg, #3f9fff, #5fbfff);
+				background: linear-gradient
+				(
+					90deg,
+					rgba(63,159,255,0.55),
+					rgba(95,191,255,0.55)
+				);
 				box-shadow: 0 0 15px rgba(100,150,255,0.7);
+				backdrop-filter: blur(12px);
 				transition: transform 0.2s ease, box-shadow 0.2s ease;
 			}
 
@@ -282,14 +295,14 @@
 				{
 					display: block;
 				}
-				.vdream-present
+				.vdream-titulo
 				{
 					flex-direction: column;
 					text-align: center;
 					gap: 40px;
 					padding: 40px 20px;
 				}
-				.texto-vdream-present h1 
+				.texto-vdream-titulo h1 
 				{
 					font-size: 2.4rem;
 				}
@@ -302,7 +315,7 @@
 
 			@media (max-width: 500px)
 			{
-				.texto-vdream-present h1
+				.texto-vdream-titulo h1
 				{
 					font-size: 2rem;
 				}
@@ -340,8 +353,8 @@
 			<a href="https://fodsoft.com"><img src="https://resources.fodsoft.com/images/web/icono_fodsoft.avif" class="icono-header pintar-blanco"> FODSOFT™</a>
 		</div>
 
-		<section class="vdream-present">
-			<div class="texto-vdream-present">
+		<section class="vdream-titulo">
+			<div class="texto-vdream-titulo">
 				<h1>
 					V.Dream,<br>
 					The definitive<br>
