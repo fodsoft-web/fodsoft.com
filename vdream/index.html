@@ -14,6 +14,7 @@
         <meta property="og:type" content="website">
         <link rel="icon" href="https://fodsoft.com/vdream/favicon.ico" type="image/x-icon">
 		<script src="https://resources.fodsoft.com/fodsoft.js" defer></script>
+		<script src="https://resources.fodsoft.com/fvax_interpreter.js"></script>
 
         <script type="application/ld+json">
         {
@@ -241,6 +242,32 @@
 				user-select: none;
 			}
 
+			.vdream-video
+			{
+				position: relative;
+				width: 100%;
+				overflow: hidden;
+			}
+
+			.vdream-video-fondo 
+			{
+				width: 100%;
+				height: auto;
+				display: block;
+				object-fit: cover;
+			}
+
+			.fondo-oscuro-video
+			{
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: rgba(0,0,0,0.35);
+				pointer-events: none;
+			}
+
 			.invertir-color
 			{
 				filter: invert(1);
@@ -368,6 +395,11 @@
 			<div class="imagen-vsmile">
 				<img src="https://raw.githubusercontent.com/neofodere/vdream/refs/heads/main/images/vsmile_cart.png" draggable="false" oncontextmenu="return false">
 			</div>
+		</section>
+
+		<section class="vdream-video"> 
+			<div class="fondo-oscuro-video"></div> 
+				<video class="vdream-video-fondo" src="https://resources.fodsoft.com/videos/vdream_01.fvax" autoplay muted loop playsinline></video> 
 		</section>
 	</body>
 
