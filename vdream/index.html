@@ -76,7 +76,6 @@
 
 			.vdream-titulo 
 			{
-				width: 100%;
 				margin-top: 120px;
 				display: flex;
 				justify-content: center;
@@ -135,15 +134,13 @@
 				user-select: none;
 			}
 
-			.icono-abajo
+			.icono-abajo 
 			{
-				position: absolute;
-				left: 50%;
+				position: fixed;
+				inset-inline: 0;
+				margin-inline: auto;
 				bottom: 70px;
-				transform: translateX(-50%);
 				width: 60px;
-				height: auto;
-				user-select: none;
 				pointer-events: none;
 				animation: respirar 2s ease-in-out infinite;
 				opacity: 0.6;
