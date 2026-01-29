@@ -6,13 +6,9 @@
         <title>V.Dream: V.Smile emulator</title>
         <meta name="author" content="Néo Foderé de Frutos">
         <meta name="description" content="V.Dream is a V.Smile emulator developed by Néo Foderé de Frutos under the FODSOFT™ brand and written in C, C#, and XAML.">
-		<meta name="keywords" content="V.Smile emulator, Vsmile emulator, VSmile emu, VTech Emulator, FODSOFT, Neo Fodere">
-        <meta property="og:title" content="V.Dream - FODSOFT™">
-        <meta property="og:description" content="V.Smile emulator developed by Néo Foderé de Frutos under the FODSOFT™ brand.">
-        <meta property="og:image" content="https://resources.fodsoft.com/images/ext/logo_vdream_a.png">
-        <meta property="og:url" content="https://fodsoft.com/vdream">
-        <meta property="og:type" content="website">
+		<meta name="keywords" content="V.Smile emulator, Vsmile emulator, VSmile emu, VTech Emulator, FODSOFT, Neo Fodere">	
         <link rel="icon" href="https://fodsoft.com/vdream/favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" href="https://resources.fodsoft.com/vdream.css">
 		<script src="https://resources.fodsoft.com/fodsoft.js" defer></script>
 		<script src="https://resources.fodsoft.com/html.js" defer></script>
 		<script src="https://resources.fodsoft.com/fvax_interpreter.js" defer></script>
@@ -68,15 +64,7 @@
         </script>
 
         <style>
-			@font-face 
-			{
-				font-family: "Montserrat";
-				src: url("https://resources.fodsoft.com/fonts/montserrat.ttf") format("truetype");
-				font-weight: bold;
-				font-style: normal;
-			}
-
-			body 
+			body
 			{
 				margin: 0;
 				padding: 0;
@@ -84,101 +72,6 @@
 				background-size: cover;
 				font-family: Montserrat, sans-serif;
 				color: #fff;
-			}
-
-			.vdream-header 
-			{
-				position: fixed;
-				top: 0;
-				width: 100%;
-				height: 70px;
-				box-sizing: border-box;
-				display: flex;
-				justify-content: space-between;
-				align-items: center;
-				padding: 0 30px;
-				background: rgba(255,255,255,0.25);
-				backdrop-filter: blur(10px);
-				border-bottom: 3px solid rgba(255,255,255,0.2);
-				z-index: 998;
-			}
-
-			.vdream-logo 
-			{
-				height: 45px;
-				user-select: none;
-			}
-
-			.vdream-nav 
-			{
-				display: flex;
-				align-items: center;
-				gap: 20px;
-			}
-
-			.vdream-nav a 
-			{
-				text-decoration: none;
-				color: #fff;
-				font-weight: 600;
-				display: inline-flex;
-				align-items: center;
-				transition: opacity 0.2s;
-			}
-
-			.vdream-nav a:hover 
-			{
-				opacity: 0.7;
-			}
-
-			.icono-header
-			{
-				height: 24px;
-				width: auto;
-				margin-right: 8px;
-				user-select: none;
-			}
-
-			.vdream-menu-icono 
-			{
-				display: none;
-				height: 32px;
-				width: auto;
-				opacity: 0.8;
-				cursor: pointer;
-				user-select: none;
-			}
-
-			.vdream-menu-desplegable 
-			{
-				display: none;
-				position: fixed;
-				top: 65px;
-				right: 18px;
-				width: 220px;
-				border-radius: 10px;
-				background: linear-gradient
-				(
-					90deg,
-					rgba(63,159,255,0.55),
-					rgba(95,191,255,0.55)
-				);
-				box-shadow: 0 0 15px rgba(100,150,255,0.7);
-				backdrop-filter: blur(12px);
-				padding: 20px;
-				flex-direction: column;
-				gap: 15px;
-				z-index: 999;
-			}
-
-			.vdream-menu-desplegable a 
-			{
-				text-decoration: none;
-				color: #fff;
-				font-weight: 600;
-				display: flex;
-				align-items: center;
-				gap: 10px;
 			}
 
 			.vdream-titulo 
@@ -377,16 +270,6 @@
 					drop-shadow(0 0 80px rgba(255,255,255,0.6));
             }
 
-			.invertir-color
-			{
-				filter: invert(1);
-			}
-
-			.pintar-blanco 
-			{
-				filter: brightness(0) invert(1);
-			}
-
 			@keyframes respirar
 			{
 				0% { transform: scale(1); }
@@ -413,18 +296,6 @@
 					text-shadow:
 						0 0 12px rgba(60,110,200,0.8),
 						0 0 22px rgba(60,110,200,0.5);
-				}
-			}
-
-			@media (max-width: 1200px) 
-			{
-				.vdream-nav 
-				{
-					display: none;
-				}
-				.vdream-menu-icono 
-				{
-					display: block;
 				}
 			}
 
@@ -466,33 +337,22 @@
 
 	<body>
 		<header id="header-vdream"></header>
-		<div class="vdream-menu-desplegable" id="vdream-menu">
-			<a href="https://fodsoft.com/vdream/"><img src="https://resources.fodsoft.com/images/web/icono_inicio.avif" class="icono-header invertir-color"> Home</a>
-			<a href="https://fodsoft.com/vdream/download"><img src="https://resources.fodsoft.com/images/web/icono_descargar.avif" class="icono-header"> Download</a>
-			<a href="https://fodsoft.com/vdream/compatibility"><img src="https://resources.fodsoft.com/images/web/icono_lista.avif" class="icono-header"> Compatibility</a>
-			<a href="https://fodsoft.com/vdream/documentation"><img src="https://resources.fodsoft.com/images/web/icono_docu.avif" class="icono-header"> Documentation</a>
-			<a href="https://github.com/neofodere/vdream" target="_blank"><img src="https://resources.fodsoft.com/images/web/icono_github.avif" class="icono-header"> GitHub</a>
-			<a href="https://fodsoft.com"><img src="https://resources.fodsoft.com/images/web/icono_fodsoft.avif" class="icono-header pintar-blanco"> FODSOFT™</a>
-		</div>
-
 		<section class="vdream-titulo">
 			<div class="texto-vdream-titulo">
 				<h1>
-					V.Dream,<br>
-					The definitive<br>
-					V.Smile family emulator.
+					V.Dream,<br> The definitive<br> V.Smile family emulator.
 				</h1>
 				<a class="boton-descarga" href="https://fodsoft.com/vdream/download">
 					<img src="https://resources.fodsoft.com/images/web/icono_descargar.avif" class="icono-boton">
 					Download
 				</a>
 			</div>
-
 			<div class="imagen-vsmile">
 				<img src="https://raw.githubusercontent.com/neofodere/vdream/refs/heads/main/images/vsmile_cart.png"
 					class="luz-blanca" draggable="false" oncontextmenu="return false">
 			</div>
-			<img src="https://resources.fodsoft.com/images/web/icono_abajo.avif" class="icono-abajo pintar-blanco" draggable="false" oncontextmenu="return false">
+			<img src="https://resources.fodsoft.com/images/web/icono_abajo.avif" 
+				class="icono-abajo pintar-blanco" draggable="false" oncontextmenu="return false">
 		</section>
 
 		<section class="vdream-video"> 
@@ -516,37 +376,17 @@
 	</body>
 
 	<script>
-		const boton = document.getElementById("vdream-menu-boton")
-		const menu = document.getElementById("vdream-menu")
-		boton.onclick = () => 
-		{
-			menu.style.display = menu.style.display === "flex" ? "none" : "flex"
-		}
-		window.addEventListener("resize", () => 
-		{
-			if (window.innerWidth > 1200)
-				menu.style.display = "none"
-		})
-
-		document.addEventListener("click", e => 
-		{
-			if (!menu.contains(e.target) && e.target !== boton)
-				menu.style.display = "none"
-		})
-
 		document.addEventListener("DOMContentLoaded", () => 
 	    {
 	        const logo = document.querySelector(".vdream-logo");
 	        if (!logo) 
 	            return;
-	        const normal = "https://resources.fodsoft.com/images/web/logo_vdream.avif";
-	        const pestaneo = "https://resources.fodsoft.com/images/web/logo_vdream_pestaneo.avif";
 	        function parpadeo()
 	        {
-	            logo.src = pestaneo;
+	            logo.src = "https://resources.fodsoft.com/images/web/logo_vdream_pestaneo.avif";
 	            setTimeout(() =>
 	            {
-	                logo.src = normal;
+	                logo.src = "https://resources.fodsoft.com/images/web/logo_vdream.avif";
 	            }, 400);
 	        }
 	        function pestanear()
