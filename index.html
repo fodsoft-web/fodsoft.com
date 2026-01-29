@@ -622,30 +622,6 @@
                 }
             );
         });
-        
-        document.addEventListener("DOMContentLoaded", () => 
-        {
-            const logo = document.querySelector(".diapositiva.activa .logo-software");
-            if (!logo) 
-                return;
-            const normal = "https://resources.fodsoft.com/images/web/logo_vdream.avif";
-            const pestaneo = "https://resources.fodsoft.com/images/web/logo_vdream_pestaneo.avif";
-            function parpadeo()
-            {
-                logo.src = pestaneo;
-                setTimeout(() =>
-                {
-                    logo.src = normal;
-                }, 400);
-            }
-            function pestanear()
-            {
-                setTimeout(parpadeo, 4000);
-                setTimeout(parpadeo, 8000);
-            }
-            setInterval(pestanear, 10000);
-            pestanear();
-        });
     </script>
 </html>
 <!-- FODSOFT(TM). Neo Fodere de Frutos. All rights reserved. -->
