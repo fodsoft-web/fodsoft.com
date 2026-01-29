@@ -243,15 +243,22 @@
 			.icono-abajo
 			{
 				position: absolute;
-				bottom: -60px;
+				bottom: -75px;
 				left: 50%;
 				transform: translateX(-50%);
 				width: 60px;
 				height: auto;
-				opacity: 0.8;
+				opacity: 0.6;
 				user-select: none;
 				pointer-events: none;
-				animation: respirar 4s ease-in-out infinite;
+				animation: respirar 2s ease-in-out infinite;
+				opacity: 1; 
+			}
+
+			.icono-abajo.oculto
+			{ 
+				opacity: 0; 
+				pointer-events: none; 
 			}
 
 			.vdream-video
@@ -566,17 +573,27 @@
 
 		document.addEventListener("scroll", () => 
 		{
-			const seccion = document.querySelector(".vdream-video");
+			const seccion_video = document.querySelector(".vdream-video");
+			const icono_abajo = document.querySelector("icono-abajo");
 			if (window.scrollY === 0)
-				seccion.classList.add("oculto");
+			{
+				seccion_video.classList.add("oculto");
+				icono_abajo.classList.add("oculto");
+			}
 			else
-				seccion.classList.remove("oculto");
+			{
+				seccion_video.classList.remove("oculto");
+				icono_abajo.classList.remove("oculto");
+			}
 		});
 
 		window.addEventListener("load", () => 
 		{
 			if (window.scrollY === 0)
+			{
 				document.querySelector(".vdream-video").classList.add("oculto");
+				document.querySelector(".icono-abajo").classList.add("oculto");
+			}
 		});
 	</script>
 </html>
