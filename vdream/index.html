@@ -578,22 +578,21 @@
 			if (window.scrollY === 0)
 			{
 				seccion_video.classList.add("oculto");
-				icono_abajo.classList.add("oculto");
+				icono_abajo.classList.remove("oculto");
 			}
 			else
 			{
 				seccion_video.classList.remove("oculto");
-				icono_abajo.classList.remove("oculto");
+				icono_abajo.classList.add("oculto");
 			}
 		});
 
 		window.addEventListener("load", () => 
 		{
 			if (window.scrollY === 0)
-			{
 				document.querySelector(".vdream-video").classList.add("oculto");
+			else
 				document.querySelector(".icono-abajo").classList.add("oculto");
-			}
 		});
 	</script>
 </html>
