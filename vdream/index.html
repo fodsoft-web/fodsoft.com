@@ -247,6 +247,14 @@
 				overflow: hidden;
 				border-top: 2.35px solid rgba(255,255,255,0.2);
 				border-bottom: 3px solid rgba(255,255,255,0.2);
+				opacity: 1; 
+				transition: opacity 0.4s ease;
+			}
+
+			.vdream-video.oculto
+			{ 
+				opacity: 0; 
+				pointer-events: none; 
 			}
 
 			.vdream-video-fondo 
@@ -539,6 +547,21 @@
 	        setInterval(pestanear, 10000);
 	        pestanear();
 	    });
+
+		document.addEventListener("scroll", () => 
+		{
+			const seccion = document.querySelector(".vdream-video");
+			if (window.scrollY === 0)
+				seccion.classList.add("oculto");
+			else
+				seccion.classList.remove("oculto");
+		});
+
+		window.addEventListener("load", () => 
+		{
+			if (window.scrollY === 0)
+				document.querySelector(".vdream-video").classList.add("oculto");
+		});
 	</script>
 </html>
 <!-- FODSOFT(TM). Neo Fodere de Frutos. All rights reserved. -->
