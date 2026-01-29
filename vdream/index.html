@@ -189,6 +189,7 @@
 				padding: 60px;
 				gap: 120px;
 				margin-bottom: 110px;
+				position: relative;
 			}
 
 			.texto-vdream-titulo h1 
@@ -237,6 +238,19 @@
 				width: 420px;
 				animation: respirar 3s ease-in-out infinite;
 				user-select: none;
+			}
+
+			.icono-abajo
+			{
+				position: absolute;
+				bottom: -40px;
+				left: 50%;
+				transform: translateX(-50%);
+				width: 40px;
+				height: auto;
+				opacity: 0.8;
+				user-select: none;
+				pointer-events: none;
 			}
 
 			.vdream-video
@@ -483,6 +497,7 @@
 				<img src="https://raw.githubusercontent.com/neofodere/vdream/refs/heads/main/images/vsmile_cart.png"
 					class="luz-blanca" draggable="false" oncontextmenu="return false">
 			</div>
+			<img src="https://resources.fodsoft.com/images/web/icono_abajo.avif" class="icono-abajo" draggable="false" oncontextmenu="return false">
 		</section>
 
 		<section class="vdream-video"> 
