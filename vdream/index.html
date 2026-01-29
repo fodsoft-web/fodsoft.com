@@ -212,7 +212,7 @@
 				font-weight: 600;
 				color: #fff;
 				text-decoration: none;
-				border-radius: 10px;
+				border-radius: 8.75px;
 				border: 3px solid rgba(255, 255, 255, 0.6);
 				background: linear-gradient(90deg, #3f9fff, #5fbfff); 
 				box-shadow: 0 0 15px rgba(100,150,255,0.7);
@@ -301,6 +301,31 @@
 				font-size: clamp(1.2rem, 3vw, 2.2rem);
 				font-weight: 600;
 				margin: 0;
+			}
+
+			.boton-compatibilidad
+			{
+				display: inline-flex;
+				align-items: center;
+				gap: 10px;
+				margin-top: 25px;
+				padding: 14px 28px;
+				font-size: 1.2rem;
+				font-weight: 600;
+				color: #fff;
+				text-decoration: none;
+				border-radius: 8.75px;
+				border: 3px solid rgba(255, 255, 255, 0.6);
+				background: rgba(255,255,255,0.25);
+				backdrop-filter: blur(10px);
+				box-shadow: 0 0 15px rgba(100,150,255,0.7);
+				transition: transform 0.2s ease, box-shadow 0.2s ease;
+			}
+
+			.boton-compatibilidad:hover 
+			{
+				transform: scale(1.08);
+				box-shadow: 0 0 25px rgba(150,200,255,1);
 			}
 
 			.mensaje-copy-video 
@@ -451,9 +476,13 @@
 				<img src="https://resources.fodsoft.com/images/web/icono_vdream_core.avif" 
 					class="icono-vdream-core" draggable="false" oncontextmenu="return false;">
 				<p class="texto-video">Relive the games of your childhood.</p>
+				<a class="boton-compatibilidad" href="https://fodsoft.com/vdream/download">
+					<img src="https://resources.fodsoft.com/images/web/icono_lista.avif" class="icono-boton">
+					Check compatibility
+				</a>
 			</div>
 			<div class="mensaje-copy-video">
-				Gameplay of Alphabet Park Adventure from VTech® captured on V.Dream.
+				Gameplay of Alphabet Park Adventure from VTech® captured on V.Dream v1.3.
 			</div>
 			<video class="vdream-video-fondo" src="https://resources.fodsoft.com/videos/vdream_01.fvax"
 				autoplay muted loop playsinline oncontextmenu="return false;">
