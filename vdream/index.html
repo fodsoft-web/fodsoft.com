@@ -365,7 +365,7 @@
 				if (!respuestaHttp.ok)
 					return;
 				const textoVersion = await respuestaHttp.text();
-				const versionCorta = "Download" + "v" + textoVersion.trim();
+				const versionCorta = "Download" + " " + "v" + textoVersion.trim();
 				document.getElementById("boton-descarga").textContent = versionCorta;
 			} 
 			catch {}
