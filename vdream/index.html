@@ -322,9 +322,8 @@
 				<h1>
 					V.Dream,<br> The definitive<br> V.Smile family emulator.
 				</h1>
-				<a class="boton-descarga" href="https://fodsoft.com/vdream/download">
+				<a class="boton-descarga" id="boton-descarga" href="https://fodsoft.com/vdream/download">
 					<img src="https://resources.fodsoft.com/images/web/icono_descargar.avif" class="icono-boton">
-					Download v1.4
 				</a>
 				<a href="https://fodsoft.com/vdream/documentation/news" class="link-novedades">What's new?</a>
 			</div>
@@ -357,6 +356,21 @@
 	</body>
 
 	<script>
+		(async function () 
+		 {
+			const archivoVersion = "https://resources.fodsoft.com/check-version/vdream-latest";
+			try 
+			{
+				const respuestaHttp = await fetch(archivoVersion);
+				if (!respuestaHttp.ok)
+					return;
+				const textoVersion = await respuestaHttp.text();
+				const versionCorta = "Download" + "v" + textoVersion.trim();
+				document.getElementById("boton-descarga").textContent = versionCorta;
+			} 
+			catch {}
+		})();
+		
 		document.addEventListener("DOMContentLoaded", () => 
 	    {
 	        const logo = document.querySelector(".vdream-logo");
