@@ -144,7 +144,6 @@
 			{
 				width: 420px;
 				will-change: transform;
-				transform: translateZ(0);
 				animation: respirar 3s ease-in-out infinite;
 				user-select: none;
 			}
@@ -157,7 +156,6 @@
 				bottom: 70px;
 				width: 60px;
 				will-change: transform;
-				transform: translateZ(0);
 				animation: respirar 2s ease-in-out infinite;
 				opacity: 0.6;
 			}
@@ -277,6 +275,19 @@
 
 			@media (max-width: 850px)
 			{
+				.imagen-vsmile img 
+				{
+					width: 410px;
+					will-change: none;
+					animation: none;
+					user-select: none;
+				}
+	
+				.icono-abajo 
+				{
+					will-change: none;
+					animation: none;
+				}
 				.vdream-titulo
 				{
 					flex-direction: column;
